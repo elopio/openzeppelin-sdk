@@ -1,0 +1,32 @@
+name: openzeppelin
+base: core18
+version: git
+summary: OpenZeppelin commmand-line interface
+description: |
+  OpenZeppelin SDK is a platform to develop, deploy and operate smart
+  contract projects on Ethereum and every other EVM and eWASM-powered
+  blockchain.
+
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: strict
+
+apps:
+  openzeppelin:
+    command: node index.js
+    plugs: [network]
+
+parts:
+  openzeppelin:
+    source: .
+    # XXX Cannot use the nodejs plugin because of https://pad.lv/1694642
+    # --elopio - 2019-08-05
+    plugin: dump
+    stage-snaps: [node/10/stable]
+    build-packages: [make, g++, python]
+    override-build: |
+      cd packages/cli
+      # FIXME these packages should be in the package.json
+      # --elopio - 2019-08-05
+      npm install web3-eth web3-eth-contract
+      npm install
+      cp packages/cli/lib/bin $SNAPCRAFT_PART_INSTALL
