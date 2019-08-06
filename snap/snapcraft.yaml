@@ -33,4 +33,7 @@ parts:
       rm -rf node_modules/websocket/.git
       rm -rf node_modules/web3/node_modules/websocket/.git
       npm install
-      cp lib/bin $SNAPCRAFT_PART_INSTALL
+      ls
+      ls lib
+      ls lib/bin
+      cp lib/bin/* $SNAPCRAFT_PART_INSTALL
