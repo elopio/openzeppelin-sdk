@@ -28,5 +28,7 @@ parts:
       # FIXME these packages should be in the package.json
       # --elopio - 2019-08-05
       npm install web3-eth web3-eth-contract
+      # XXX workaround for https://github.com/OpenZeppelin/openzeppelin-sdk/issues/929
+      rm -rf node_modules/websocket/.git
       npm install
       cp packages/cli/lib/bin $SNAPCRAFT_PART_INSTALL
