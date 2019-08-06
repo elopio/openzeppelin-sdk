@@ -35,6 +35,6 @@ parts:
       cp lib/bin/* $SNAPCRAFT_PART_INSTALL
     after: [node]
   node:
-    plugin: make
+    plugin: autotools
     source: https://nodejs.org/dist/v10.16.1/node-v10.16.1.tar.gz
     build-packages: [g++, make, python]
