@@ -12,7 +12,7 @@ confinement: strict
 
 apps:
   openzeppelin:
-    command: node index.js
+    command: node oz-cli.js
     plugs: [network]
 
 parts:
@@ -33,7 +33,4 @@ parts:
       rm -rf node_modules/websocket/.git
       rm -rf node_modules/web3/node_modules/websocket/.git
       npm install --unsafe-perm
-      ls
-      ls lib
-      ls lib/bin
       cp lib/bin/* $SNAPCRAFT_PART_INSTALL
