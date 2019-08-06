@@ -32,7 +32,7 @@ parts:
       # --elopio - 2019-08-06
       rm -rf node_modules/websocket/.git
       rm -rf node_modules/web3/node_modules/websocket/.git
-      npm install
+      npm install --unsafe-perm
       ls
       ls lib
       ls lib/bin
