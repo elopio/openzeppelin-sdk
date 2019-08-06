@@ -31,5 +31,6 @@ parts:
       # XXX workaround for https://github.com/OpenZeppelin/openzeppelin-sdk/issues/929
       # --elopio - 2019-08-06
       rm -rf node_modules/websocket/.git
+      rm -rf node_modules/web3/node_modules/websocket/.git
       npm install
       cp packages/cli/lib/bin $SNAPCRAFT_PART_INSTALL
