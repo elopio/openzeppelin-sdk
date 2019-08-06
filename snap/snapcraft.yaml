@@ -21,7 +21,6 @@ parts:
     # XXX Cannot use the nodejs plugin because of https://pad.lv/1694642
     # --elopio - 2019-08-05
     plugin: dump
-    stage-snaps: [node/10/stable]
     build-packages: [make, g++, python]
     override-build: |
       cd packages/cli
@@ -34,3 +33,7 @@ parts:
       rm -rf node_modules/web3/node_modules/websocket/.git
       npm install --unsafe-perm
       cp lib/bin/* $SNAPCRAFT_PART_INSTALL
+    after: [node]
+  node:
+    plugin: nodejs
+    nodejs-version: '10.16.1'
