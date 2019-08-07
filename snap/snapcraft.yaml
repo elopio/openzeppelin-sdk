@@ -23,6 +23,7 @@ parts:
     plugin: dump
     build-packages: [make, g++, python]
     override-build: |
+      export PATH=$SNAPCRAFT_STAGE/usr/local/bin/:$PATH
       cd packages/cli
       # FIXME these packages should be in the package.json
       # --elopio - 2019-08-05
