@@ -12,7 +12,7 @@ confinement: strict
 
 apps:
   openzeppelin:
-    command: node oz-cli.js
+    command: usr/local/bin/node oz-cli.js
     plugs: [network]
 
 parts:
