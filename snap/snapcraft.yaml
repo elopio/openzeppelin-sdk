@@ -12,7 +12,7 @@ confinement: strict
 
 apps:
   openzeppelin:
-    command: usr/local/bin/node bin/oz-cli.js
+    command: $SNAP/usr/local/bin/node $SNAP/bin/oz-cli.js
     plugs: [network]
 
 parts:
