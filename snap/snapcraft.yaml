@@ -13,6 +13,8 @@ confinement: strict
 apps:
   openzeppelin:
     command: $SNAP/usr/local/bin/node $SNAP/bin/oz-cli.js
+    environment: 
+      NODE_PATH: $SNAP/node_modules 
     plugs: [network]
 
 parts:
@@ -33,7 +35,8 @@ parts:
       rm -rf node_modules/websocket/.git
       rm -rf node_modules/web3/node_modules/websocket/.git
       npm install --unsafe-perm
-      cp -r lib/* $SNAPCRAFT_PART_INSTALL
+      cp -r lib $SNAPCRAFT_PART_INSTALL
+      cp -r node_modules $SNAPCRAFT_PART_INSTALL
     after: [node]
   node:
     plugin: autotools
