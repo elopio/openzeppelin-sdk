@@ -12,9 +12,9 @@ confinement: strict
 
 apps:
   openzeppelin:
-    command: $SNAP/usr/local/bin/node $SNAP/bin/oz-cli.js
+    command: usr/local/bin/node $SNAP/bin/oz-cli.js
     environment: 
-      NODE_PATH: $SNAP/node_modules 
+      NODE_PATH: $SNAP/node_modules:$NODE_PATH
     plugs: [network]
 
 parts:
