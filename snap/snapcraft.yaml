@@ -24,6 +24,8 @@ parts:
     # --elopio - 2019-08-05
     plugin: dump
     build-packages: [make, g++, python]
+    stage-packages:
+      - git
     override-build: |
       export PATH=$SNAPCRAFT_STAGE/usr/local/bin/:$PATH
       cd packages/cli
