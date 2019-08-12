@@ -39,6 +39,7 @@ parts:
       rm -rf node_modules/web3/node_modules/tar/lib/.mkdir.js.swp
       rm -rf node_modules/web3-eth-accounts/node_modules/semver/bin/.semver.js.swp
       npm install --unsafe-perm
+      cp package.json $SNAPCRAFT_PART_INSTALL
       cp -r lib $SNAPCRAFT_PART_INSTALL
       cp -r node_modules $SNAPCRAFT_PART_INSTALL
     after: [node]
