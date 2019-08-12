@@ -15,7 +15,7 @@ apps:
     command: usr/local/bin/node $SNAP/lib/bin/oz-cli.js
     environment: 
       NODE_PATH: $SNAP/node_modules:$NODE_PATH
-    plugs: [network]
+    plugs: [home, network]
 
 parts:
   openzeppelin:
