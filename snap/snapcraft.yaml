@@ -29,6 +29,7 @@ parts:
     stage-packages:
       # Needed for $ openzeppelin unpack tutorial
       - git-core
+      - build-essential
       - make
       - g++
       - python
