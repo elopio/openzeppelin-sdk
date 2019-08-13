@@ -27,7 +27,11 @@ parts:
     plugin: dump
     build-packages: [make, g++, python]
     stage-packages:
+      # Needed for $ openzeppelin unpack tutorial
       - git-core
+      - make
+      - g++
+      - python
     override-build: |
       export PATH=$SNAPCRAFT_STAGE/usr/local/bin/:$PATH
       cd packages/cli
