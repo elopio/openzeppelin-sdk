@@ -17,6 +17,7 @@ apps:
       PATH: $SNAP/usr/local/bin/:$PATH 
       NODE_PATH: $SNAP/node_modules:$NODE_PATH
       GIT_EXEC_PATH: $SNAP/usr/lib/git-core
+      CPATH: $CPATH:$SNAP/usr/include
     plugs: [home, network]
 
 parts:
